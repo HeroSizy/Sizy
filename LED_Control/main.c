@@ -9,6 +9,7 @@
 #include <usbstk5515.h>
 #include <stdio.h>
 #include "sar.h"
+#include "AIC_func.h"
 
 //Addresses of the MMIO for the GPIO out registers: 1,2 
 #define LED_OUT1 *((ioport volatile Uint16*) 0x1C0A /*__GPIO_Data_Out_Register1_*/  )
@@ -65,16 +66,23 @@ void switch_LED(Uint16 sar) {
 
 void main(void)
 {
-	Uint16 value;
+	Int16 x_right[1], x_left[1];	//inputs
+	Int16 r_right[1], r_left[1];	//outputs
+//	Uint16 value;
 	USBSTK5515_init(); //Initializing the Processor
-	Init_SAR();
-	My_LED_init();
+//	Init_SAR();
+	AIC_init();
+//	My_LED_init();
 	while(1)
 	{
 		/*printf("Which LED shall we toggle(0, 1, 2, or 3)?\n");
-		scanf("%d",&value);*/
+		scanf("%d",&value);
 		value = Get_Sar_Key();
 		switch_LED(value);
-		/*toggle_LED(value);*/
+		toggle_LED(value);*/
+		AIC_read2(x_right, x_left);
+		r_right[0] = x_right[0];
+		r_left[0] = x_left[0];
+		AIC_write2(r_right[0], r_left[0]);
 	}
 }
