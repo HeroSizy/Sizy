@@ -8,6 +8,7 @@
 
 #include <usbstk5515.h>
 #include <stdio.h>
+#include "sar.h"
 
 //Addresses of the MMIO for the GPIO out registers: 1,2 
 #define LED_OUT1 *((ioport volatile Uint16*) 0x1C0A /*__GPIO_Data_Out_Register1_*/  )
@@ -45,15 +46,35 @@ void My_LED_init()
 	LED_OUT2 |= temp2;  //Set LEDs 2, 3 to off
 }
 
+void switch_LED(Uint16 sar) {
+	if (sar == SW1) {
+		toggle_LED(0);
+		toggle_LED(1);
+	}
+	
+	if (sar == SW2) {
+		toggle_LED(2);
+		toggle_LED(3);
+	}
+	
+	if (sar == SW12) {
+		toggle_LED(0);
+		toggle_LED(2);
+	}
+}
+
 void main(void)
 {
 	Uint16 value;
 	USBSTK5515_init(); //Initializing the Processor
+	Init_SAR();
 	My_LED_init();
 	while(1)
 	{
-		printf("Which LED shall we toggle(0, 1, 2, or 3)?\n");
-		scanf("%d",&value);
-		toggle_LED(value);
+		/*printf("Which LED shall we toggle(0, 1, 2, or 3)?\n");
+		scanf("%d",&value);*/
+		value = Get_Sar_Key();
+		switch_LED(value);
+		/*toggle_LED(value);*/
 	}
 }
