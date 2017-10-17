@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="com.ti.ccstudio.managedbuild.ui.wizards.project.CCEProjectPropertiesPage.PROJECT_TYPE" value="com.ti.ccstudio.buildDefinitions.C5500.ProjectType"/>
+	<section name="outline_presenter_bounds">
+	</section>
+	<section name="com.ti.common.managedbuild.ui.wizards.project.ProjectPropertiesPage">
+		<item key="DSPBIOS.TOOL_VERSION" value="5.41.02.14"/>
+		<item key="CCE.ASSEMBLY_ONLY" value="false"/>
+		<item key="CCE.CODEGEN_TOOL_VERSION" value="4.3.6"/>
+		<item key="CCE.OUTPUT_FORMAT" value="Coff"/>
+		<item key="CCE.LINKER_COMMAND_FILE" value="C:\Users\eeeceldsp1\Desktop\Sizy\C5515_Support_Files\lnkx.cmd"/>
+		<item key="CCE.RUNTIME_SUPPORT_LIB" value="rts55x.lib"/>
+		<item key="CCE.DEVICE_ENDIANNESS" value="big"/>
+		<item key="PROJECT_KIND" value="com.ti.ccstudio.managedbuild.core.ProjectKind_Executable"/>
+		<item key="CCE.DEVICE_VARIANT" value="TMS320C55XX.TMS320VC5515"/>
+	</section>
+	<section name="!CProjectWizard!">
+	</section>
+</section>
