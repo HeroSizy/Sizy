@@ -25,6 +25,8 @@
 <option id="com.ti.ccstudio.buildDefinitions.C5500_4.3.compilerID.SILICON_VERSION.2144949199" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.3.compilerID.SILICON_VERSION" value="5515" valueType="string"/>
 <option id="com.ti.ccstudio.buildDefinitions.C5500_4.3.compilerID.INCLUDE_PATH.783543873" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.3.compilerID.INCLUDE_PATH" valueType="includePath">
 <listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\EE4413 Course Materials\Part 2 of 2_By Prof Joni Lie\EE4413_C515\C5515_Support_Files\452_Support&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\EE4413 Course Materials\Part 2 of 2_By Prof Joni Lie\EE4413_C515\C5515_Support_Files\C5515_Includes&quot;"/>
 <listOptionValue builtIn="false" value="&quot;C:\Users\eeeceldsp1\Desktop\Sizy\C5515_Support_Files\C5515_Includes&quot;"/>
 </option>
 </tool>
@@ -32,11 +34,15 @@
 <option id="com.ti.ccstudio.buildDefinitions.C5500_4.3.linkerID.OUTPUT_FILE.533153502" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.3.linkerID.OUTPUT_FILE" value="&quot;LED_Control.out&quot;" valueType="string"/>
 <option id="com.ti.ccstudio.buildDefinitions.C5500_4.3.linkerID.MAP_FILE.1057675938" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.3.linkerID.MAP_FILE" value="&quot;LED_Control.map&quot;" valueType="string"/>
 <option id="com.ti.ccstudio.buildDefinitions.C5500_4.3.linkerID.LIBRARY.1252899561" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.3.linkerID.LIBRARY" valueType="libs">
+<listOptionValue builtIn="false" value="&quot;C:\Users\eeeceldsp1\Desktop\Sizy\C5515_Support_Files\C5515_Lib\dsplib_2.40.00\55xdspx_LARGE.lib&quot;"/>
 <listOptionValue builtIn="false" value="&quot;rts55x.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\EE4413 Course Materials\Part 2 of 2_By Prof Joni Lie\EE4413_C515\C5515_Support_Files\452_Support\452_Labs_Essentials.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\EE4413 Course Materials\Part 2 of 2_By Prof Joni Lie\EE4413_C515\C5515_Support_Files\C5515_Lib\usbstk5515bsl.lib&quot;"/>
 <listOptionValue builtIn="false" value="&quot;C:\Users\eeeceldsp1\Desktop\Sizy\C5515_Support_Files\usbstk5515bsl.lib&quot;"/>
 </option>
 <option id="com.ti.ccstudio.buildDefinitions.C5500_4.3.linkerID.SEARCH_PATH.630101385" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.3.linkerID.SEARCH_PATH" valueType="stringList">
 <listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\EE4413 Course Materials\Part 2 of 2_By Prof Joni Lie\EE4413_C515\C5515_Support_Files\C5515_Lib&quot;"/>
 <listOptionValue builtIn="false" value="&quot;C:\Users\eeeceldsp1\Desktop\Sizy\C5515_Support_Files\C5515_Lib&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
 </option>
@@ -84,5 +90,6 @@
 </tool>
 </toolChain>
 </configuration>
+<macros/>
 </project>
 </ManagedProjectBuildInfo>

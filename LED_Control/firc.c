@@ -18,7 +18,7 @@ Int16 coef[TAPS] = {
 	#include "lpf.dat"
 };
  
-Int16 firc(Uint16 i)
+Int16 firc(Uint16 * in, Uint16 i)
 {
 	Int32 sum;
 	Uint16 j;
@@ -26,8 +26,7 @@ Int16 firc(Uint16 i)
 	sum=0;
 
 	//The actual filter work
-	for(j=0; j<TAPS; j++)
-	{
+	for (j=0; j<TAPS; j++) {
 		if(i>=j)
  			index = i - j;
 		else 

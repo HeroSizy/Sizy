@@ -13,32 +13,37 @@
 #define TIME_START	0x8001
 #define TIME_STOP	0x8000
 
-Int16 in_left[TAPS] = {0};
-Int16 in_right[TAPS] = {0};
+Int16 LP[TAPS] = { 
+	#include "lpf.dat" 
+};
+
+Uint16 in_left[TAPS] = {0};
+Uint16 in_right[TAPS] = {0};
+
+Uint16 dbuffer_left[TAPS + 2] = {0};
+Uint16 dbuffer_right[TAPS + 2] = {0};
+
 void main(void)
 {
-	Uint16 i=0;
 	Int16 right, left; //AIC inputs
-	Int16 out_left, out_right; //AIC output
+	Uint16 out_left, out_right; //AIC output
+	Uint16 start_time;
+	Uint16 end_time;
+	Uint16 delta_time;
 	USBSTK5515_init(); 	//Initializing the Processor
 	AIC_init(); 		//Initializing the Audio Codec
-	TCR0 = TIME_STOP;
-	TCR0 = TIME_START;
+	
+
+
 	
 	while(1)
 	{
-		if (i >= TAPS) {
-			i=0;
-			}
 		AIC_read2(&right, &left);
-		in_right[i] = right; 
-		out_right = firc(in_right);
-		in_left[i] = left;
-		out_left = firc(in_left);
-		
-		//r_right[0]=x_right[0]; //Audio Bypass
-		// POSTFILTER:
+		start_time = TIMCNT1_0;
+		fir(right, LP, out_right, dbuffer_right, 1, TAPS);
+		fir(left, LP, out_left, dbuffer_left, 1, TAPS);
+		end_time = TIMCNT1_0;
+		delta_time = start_time - end_time;
 		AIC_write2(out_right, out_left);
-		i++;
 	}
 }

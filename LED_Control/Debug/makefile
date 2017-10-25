@@ -10,7 +10,11 @@ SPACE := $(EMPTY) $(EMPTY)
 ORDERED_OBJS += \
 $(GEN_CMDS_QUOTED) \
 "./main.obj" \
+"./firc.obj" \
+-l"C:\Users\eeeceldsp1\Desktop\Sizy\C5515_Support_Files\C5515_Lib\dsplib_2.40.00\55xdspx_LARGE.lib" \
 -l"rts55x.lib" \
+-l"C:\EE4413 Course Materials\Part 2 of 2_By Prof Joni Lie\EE4413_C515\C5515_Support_Files\452_Support\452_Labs_Essentials.lib" \
+-l"C:\EE4413 Course Materials\Part 2 of 2_By Prof Joni Lie\EE4413_C515\C5515_Support_Files\C5515_Lib\usbstk5515bsl.lib" \
 -l"C:\Users\eeeceldsp1\Desktop\Sizy\C5515_Support_Files\usbstk5515bsl.lib" \
 "../lnkx.cmd" \
 
@@ -109,15 +113,15 @@ all: LED_Control.out
 LED_Control.out: $(GEN_CMDS) $(CMD_SRCS) $(OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Linker'
-	"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/c5500/bin/cl55" -v5515 -g --diag_warning=225 --ptrdiff_size=32 --memory_model=large -z -m"LED_Control.map" --warn_sections -i"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/c5500/lib" -i"C:/Users/eeeceldsp1/Desktop/Sizy/C5515_Support_Files/C5515_Lib" -i"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/c5500/include" --reread_libs --rom_model -o "LED_Control.out" $(ORDERED_OBJS)
+	"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/c5500/bin/cl55" -v5515 -g --diag_warning=225 --ptrdiff_size=32 --memory_model=large -z -m"LED_Control.map" --warn_sections -i"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/c5500/lib" -i"C:/EE4413 Course Materials/Part 2 of 2_By Prof Joni Lie/EE4413_C515/C5515_Support_Files/C5515_Lib" -i"C:/Users/eeeceldsp1/Desktop/Sizy/C5515_Support_Files/C5515_Lib" -i"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/c5500/include" --reread_libs --rom_model -o "LED_Control.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(C5500_EXECUTABLE_OUTPUTS__QTD) "LED_Control.out"
-	-$(RM) ".\main.obj" 
-	-$(RM) ".\main.pp" 
+	-$(RM) ".\firc.obj" ".\main.obj" 
+	-$(RM) ".\firc.pp" ".\main.pp" 
 	-@echo ' '
 
 .PHONY: all clean dependents
