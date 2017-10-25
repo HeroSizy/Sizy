@@ -13,8 +13,8 @@
 #define TIME_START	0x8001
 #define TIME_STOP	0x8000
 
-Int16 in_left[TAPS] = {0};
-Int16 in_right[TAPS] = {0};
+Uint16 in_left[TAPS] = {0};
+Uint16 in_right[TAPS] = {0};
 void main(void)
 {
 	Uint16 i=0;
@@ -32,9 +32,9 @@ void main(void)
 			}
 		AIC_read2(&right, &left);
 		in_right[i] = right; 
-		out_right = firc(in_right);
+		out_right = firc(&in_right[0], i);
 		in_left[i] = left;
-		out_left = firc(in_left);
+		out_left = firc(&in_left[0], i);
 		
 		//r_right[0]=x_right[0]; //Audio Bypass
 		// POSTFILTER:

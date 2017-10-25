@@ -18,7 +18,7 @@ Int16 coef[TAPS] = {
 	#include "lpf.dat"
 };
  
-Int16 firc(Uint16 i)
+Int16 firc(Uint16 * in, Uint16 i)
 {
 	Int32 sum;
 	Uint16 j;
