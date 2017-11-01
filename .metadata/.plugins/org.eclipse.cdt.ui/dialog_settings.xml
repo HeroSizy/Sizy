@@ -10,8 +10,8 @@
 		<item key="CCE.OUTPUT_FORMAT" value="Coff"/>
 		<item key="CCE.LINKER_COMMAND_FILE" value="C:\Users\eeeceldsp1\Desktop\Sizy\C5515_Support_Files\lnkx.cmd"/>
 		<item key="CCE.RUNTIME_SUPPORT_LIB" value="rts55x.lib"/>
-		<item key="CCE.DEVICE_ENDIANNESS" value="big"/>
 		<item key="PROJECT_KIND" value="com.ti.ccstudio.managedbuild.core.ProjectKind_Executable"/>
+		<item key="CCE.DEVICE_ENDIANNESS" value="big"/>
 		<item key="CCE.DEVICE_VARIANT" value="TMS320C55XX.TMS320VC5515"/>
 	</section>
 	<section name="!CProjectWizard!">

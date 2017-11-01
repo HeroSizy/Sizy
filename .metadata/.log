@@ -26,3 +26,29 @@ org.eclipse.core.runtime.OperationCanceledException
 	at com.ti.ccstudio.debug.core.licensing.LicenseManager.acquireLicense(LicenseManager.java:65)
 	at com.ti.ccstudio.debug.ui.licensing.LicenseMonitor$1.run(LicenseMonitor.java:43)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:58)
+
+!ENTRY com.ti.ccstudio.debug.core 4 0 2017-10-25 17:00:38.748
+!MESSAGE Fatal Error: C55xx: Error connecting to the target: Error 0x80000242/-2130 Fatal Error during: Memory, Initialization, OCS,  Cannot access memory address at 0x00000400  
+
+
+!ENTRY com.ti.ccstudio.debug.core 4 0 2017-10-25 17:00:43.510
+!MESSAGE Error: C55xx: Trouble Writing Register PC: Error 0x00000004/-1024 Error during: Register,  PTI_ERR_PREV_IROP_CMD Error Occured at 0x00000000  
+
+
+!ENTRY com.ti.ccstudio.debug.core 4 0 2017-10-25 17:00:45.921
+!MESSAGE Error: C55xx: Can't Run Target CPU: Error 0x00000020/-1141 Error during: Execution,  Processor communication timeout. It is recommended to RESET EMULATOR. This will disconnect each target,   perform an emulation reset, and then reconnect each target. Power cycle the target board before continuing.  
+
+
+!ENTRY com.ti.ccstudio.debug.core 4 0 2017-10-25 17:00:53.506
+!MESSAGE Error: C55xx: Failed to remove the debug state from the target before disconnecting.  There may still be breakpoint op-codes embedded in program memory.  It is recommended that you reset the emulator before you connect and reload your program before you continue debugging
+
+!SESSION 2017-11-01 11:43:08.177 -----------------------------------------------
+eclipse.buildId=4.1.3.00034
+java.version=1.5.0_14
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.ti.ccstudio.debug.core 4 0 2017-11-01 13:34:27.827
+!MESSAGE Fatal Error: C55xx: Error connecting to the target: Error 0x80000242/-1138 Fatal Error during: Memory, Initialization, OCS,  Processor aborted debug context.  
+
